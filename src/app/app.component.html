@@ -1,27 +1,35 @@
 <div class="container">
 
-  <div *ngIf="!isStarted; else imageTmpl"
-       class="button">
-    <button nz-button
-            nzType="primary"
-            (click)="onStartButtonClicked()">Start</button>
+
+  <div class="image-area">
+    <div *ngIf="!isStarted; else imageTmpl"
+         class="button">
+      <button nz-button
+              nzType="primary"
+              (click)="onStartButtonClicked()">Start</button>
+    </div>
+
+    <ng-template #imageTmpl>
+      <div class="image">
+        <nz-spin [nzSpinning]="!imagePath">
+          <img [src]="imagePath">
+        </nz-spin>
+      </div>
+
+      <div class="radio">
+        <nz-radio-group [(ngModel)]="radioValue"
+                        (ngModelChange)="onRadioChange()">
+          <ng-container *ngFor="let value of radioOptions">
+            <label nz-radio
+                   [nzValue]="value">
+              <div class="label">
+                {{ value }}
+              </div>
+            </label>
+          </ng-container>
+        </nz-radio-group>
+      </div>
+    </ng-template>
   </div>
-
-  <ng-template #imageTmpl>
-    <div class="image">
-      <nz-spin [nzSpinning]="!imagePath">
-        <img [src]="imagePath">
-      </nz-spin>
-    </div>
-
-    <div class="radio">
-      <nz-radio-group [(ngModel)]="radioValue"
-                      (ngModelChange)="onRadioChange()">
-        <ng-container *ngFor="let value of radioOptions">
-          <label nz-radio
-                 [nzValue]="value">{{ value }}</label>
-        </ng-container>
-      </nz-radio-group>
-    </div>
-  </ng-template>
+  <footer class="footer"><b>Duygu Çakır-Talha Akca</b></footer>
 </div>
