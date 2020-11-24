@@ -47,7 +47,7 @@ const routes: Routes = [
     HttpClientModule,
     BrowserAnimationsModule,
     NgZorroAntdModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
