@@ -13,22 +13,24 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~9.1.4",
-    "@angular/common": "~9.1.4",
-    "@angular/compiler-cli": "^9.1.12",
     "@angular/cli": "^11.0.2",
+    "@angular/common": "~9.1.4",
     "@angular/compiler": "~9.1.4",
+    "@angular/compiler-cli": "^9.1.12",
     "@angular/core": "~9.1.4",
     "@angular/fire": "^6.0.4",
     "@angular/forms": "~9.1.4",
     "@angular/platform-browser": "~9.1.4",
     "@angular/platform-browser-dynamic": "~9.1.4",
     "@angular/router": "~9.1.4",
+    "express": "^4.17.1",
     "firebase": "^7.0.0 || ^8.0.0",
     "ng-zorro-antd": "^9.3.0",
+    "path": "^0.12.7",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
-    "zone.js": "~0.10.2",
-    "typescript": "~3.8.3"
+    "typescript": "~3.8.3",
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/architect": ">= 0.900 < 0.1100",
