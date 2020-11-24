@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "duygucakir-2538d": {
+      "hosting": {
+        "duygu-cakir": [
+          "duygucakir-2538d"
+        ]
+      }
+    }
+  }
+}
