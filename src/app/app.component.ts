@@ -81,7 +81,7 @@ export class AppComponent implements OnInit {
     };
 
     const imageName = this.imageRef.split('.', 1);
-    const refPath = `images/${imageName}`;
+    // const refPath = `images/${imageName}`;
 
     this.database.ref().push(imageData);
     this.getRandomImage();
