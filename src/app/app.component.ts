@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
   imageRef: string;
   imagePath: string;
   imageType: string;
-  ckFirstEmotionGroup = ['surprised', 'sadness', 'neutral', 'happiness', 'fear', 'disgust', 'contempt', 'anger'];
+  ckFirstEmotionGroup = ['Surprised - Şaşkınlık', 'Sadness - Üzüntü', 'Neutral - Nötr', 'Happiness - Mutluluk', 'Fear - Korku ', 'Disgust - İğrenme', 'Contempt - Küçümseme', 'Anger - Kızgınlık'];
   radioOptions = [];
   radioValue: string;
   timePassed = 0;

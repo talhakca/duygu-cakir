@@ -8,11 +8,14 @@
 }
 
 .image-area {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .radio {
-  margin-top: 50px;
+  margin-left: 50px;
 }
 
 .footer {
@@ -31,4 +34,27 @@
   color: white;
   margin-bottom: 20px;
   font-size: xx-large;
+}
+
+.radio {
+  width: 250px;
+  text-align: start;
+  // padding: 50px;
+}
+
+// .radio-container {
+//   display
+// }
+
+:host::ng-deep .ant-radio-wrapper {
+  margin-top: 15px;
+}
+
+.content-area {
+  display: flex;
+  align-items: flex-start;
+}
+
+.image-tag {
+  height: 320px;
 }

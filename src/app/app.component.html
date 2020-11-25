@@ -13,25 +13,32 @@
     </div>
 
     <ng-template #imageTmpl>
-      <div class="image">
-        <nz-spin [nzSpinning]="!imagePath">
-          <img [src]="imagePath">
-        </nz-spin>
-      </div>
+      <nz-spin [nzSpinning]="!imagePath">
+        <div class="content-area">
+          <div class="image">
+            <img [src]="imagePath"
+                 class="image-tag">
+          </div>
+          <div class="radio">
+            <nz-radio-group [(ngModel)]="radioValue"
+                            class="radio-group"
+                            (ngModelChange)="onRadioChange()">
+              <ng-container *ngFor="let value of radioOptions">
+                <label nz-radio
+                       [nzValue]="value">
+                  <div class="label">
+                    {{ value }}
+                  </div>
+                </label>
+              </ng-container>
+            </nz-radio-group>
+          </div>
+        </div>
+      </nz-spin>
 
-      <div class="radio">
-        <nz-radio-group [(ngModel)]="radioValue"
-                        (ngModelChange)="onRadioChange()">
-          <ng-container *ngFor="let value of radioOptions">
-            <label nz-radio
-                   [nzValue]="value">
-              <div class="label">
-                {{ value }}
-              </div>
-            </label>
-          </ng-container>
-        </nz-radio-group>
-      </div>
+      <!-- <div class="radio-container"> -->
+
+      <!-- </div> -->
     </ng-template>
   </div>
   <footer class="footer"><b>Duygu Çakır-Talha Akca </b></footer>
