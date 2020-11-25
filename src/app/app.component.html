@@ -1,27 +1,74 @@
-<div class="container">
+<ng-container *ngIf="innerWidth > 576; else mobile">
 
+  <div class="web-container">
+    <div class="image-area">
+      <div class="description">
+        You should pick the emotion that suits the image.
+      </div>
+      <div *ngIf="!isStarted; else imageTmpl"
+           class="button">
+        <button nz-button
+                nzType="primary"
+                (click)="onStartButtonClicked()">Start</button>
+      </div>
 
-  <div class="image-area">
-    <div class="description">
-      You should pick the emotion that suits the image.
+      <ng-template #imageTmpl>
+        <nz-spin [nzSpinning]="!imagePath">
+          <div class="content-area">
+            <div class="image">
+              <img [src]="imagePath"
+                   class="image-tag">
+            </div>
+            <div class="radio">
+              <nz-radio-group [(ngModel)]="radioValue"
+                              class="radio-group"
+                              (ngModelChange)="onRadioChange()">
+                <ng-container *ngFor="let value of radioOptions">
+                  <label nz-radio
+                         [nzValue]="value">
+                    <div class="label">
+                      {{ value }}
+                    </div>
+                  </label>
+                </ng-container>
+              </nz-radio-group>
+            </div>
+          </div>
+        </nz-spin>
+
+        <!-- <div class="radio-container"> -->
+
+        <!-- </div> -->
+      </ng-template>
     </div>
-    <div *ngIf="!isStarted; else imageTmpl"
-         class="button">
+    <footer class="footer"><b>Duygu Çakır-Talha Akca </b></footer>
+  </div>
+</ng-container>
+
+<ng-template #mobile>
+  <div class="mobile-container">
+    <div class="mobile-description">
+      <span>
+        Pick the emotion that suits the image.
+      </span>
+    </div>
+    <div *ngIf="!isStarted; else mobileImageTmpl">
       <button nz-button
+              class="mobile-button"
               nzType="primary"
               (click)="onStartButtonClicked()">Start</button>
     </div>
 
-    <ng-template #imageTmpl>
+    <ng-template #mobileImageTmpl>
       <nz-spin [nzSpinning]="!imagePath">
-        <div class="content-area">
-          <div class="image">
+        <div class="mobile-content-area">
+          <div class="mobile-image">
             <img [src]="imagePath"
                  class="image-tag">
           </div>
-          <div class="radio">
+          <div class="mobile-radio-group">
             <nz-radio-group [(ngModel)]="radioValue"
-                            class="radio-group"
+                            class="mobile-radio"
                             (ngModelChange)="onRadioChange()">
               <ng-container *ngFor="let value of radioOptions">
                 <label nz-radio
@@ -35,11 +82,6 @@
           </div>
         </div>
       </nz-spin>
-
-      <!-- <div class="radio-container"> -->
-
-      <!-- </div> -->
     </ng-template>
   </div>
-  <footer class="footer"><b>Duygu Çakır-Talha Akca </b></footer>
-</div>
+</ng-template>

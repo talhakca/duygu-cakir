@@ -24,13 +24,15 @@ export class AppComponent implements OnInit {
   timePassed = 0;
   isStarted = false;
   datasetType: string;
-
+  innerWidth;
   constructor(
     private firebase: FirebaseApp
   ) { }
 
   ngOnInit(): void {
     this.startTimer();
+    this.innerWidth = window.innerWidth;
+    console.log(typeof this.innerWidth)
   }
 
   /**

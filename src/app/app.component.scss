@@ -1,4 +1,4 @@
-.container {
+.web-container {
   display: flex;
   height: 100%;
   flex-direction: column;
@@ -42,10 +42,6 @@
   // padding: 50px;
 }
 
-// .radio-container {
-//   display
-// }
-
 :host::ng-deep .ant-radio-wrapper {
   margin-top: 15px;
 }
@@ -57,4 +53,46 @@
 
 .image-tag {
   height: 320px;
+}
+
+.mobile-container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #434f46;
+}
+
+.mobile-button {
+  width: 200px;
+}
+
+.mobile-description {
+  font-size: medium;
+  font-weight: bolder;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.mobile-content-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mobile-image {
+  display: flex;
+  justify-content: center;
+}
+
+.mobile-radio {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.mobile-radio-group {
+  display: flex;
+  justify-content: center;
 }
