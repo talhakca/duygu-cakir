@@ -11,6 +11,9 @@
                 nzType="primary"
                 (click)="onStartButtonClicked()">Start</button>
       </div>
+      <div class="additional">
+        <small>This test doesn't have an end. And you didn't have to submit. Leave whenever you want.</small>
+      </div>
 
       <ng-template #imageTmpl>
         <nz-spin [nzSpinning]="!imagePath">
@@ -57,6 +60,9 @@
               class="mobile-button"
               nzType="primary"
               (click)="onStartButtonClicked()">Start</button>
+    </div>
+    <div class="additional">
+      <small>This test doesn't have an end.<br> And you didn't have to submit. Leave whenever you want.</small>
     </div>
 
     <ng-template #mobileImageTmpl>
