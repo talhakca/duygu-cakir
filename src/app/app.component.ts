@@ -32,7 +32,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.startTimer();
     this.innerWidth = window.innerWidth;
-    console.log(typeof this.innerWidth)
   }
 
   /**
@@ -44,7 +43,7 @@ export class AppComponent implements OnInit {
     /* creating local storagaRef */
     const storageRef = this.storage.ref('images');
     /* getting storage ref (images) list */
-    storageRef.list().then((storageList: ListResult) => {
+    storageRef.listAll().then((storageList: ListResult) => {
       /* takes items length and creating random index */
       const randomIndex = Math.floor(Math.random() * storageList.items.length);
       /* gets random image's metadata */
